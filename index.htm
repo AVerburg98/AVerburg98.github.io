@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+			<head>
+			<title>Portfolio a la Axel</title>
+			
+				 <meta charset="utf-8">
+    		 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   			 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+				<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+			
+			  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+				<link rel="stylesheet" href="main.css">
+			
+			</head>
+			
+			<body>
+				<div class="nav">
+					<div class="container">
+						<ul class="pull-left">
+							<li><a href="https://www.linkedin.com/in/axel-verburg-19b761105"target="_blank">Axel Verburg</a></li>
+						</ul>
+						<ul class="pull-right">
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="jumbotron">
+					<div class="container">
+						<h1>Welkom in mijn portfolio.</h1>
+						<p>Hier kunt u alle informatie over mij vinden of opvragen.</p>
+						<a href="https://drive.google.com/open?id=0B1X_PN4AJ1fpa25mVGFCMVFVMEk"class="btn btn-info"target="_blank">Mijn CV</a>
+						
+					</div>
+				</div>
+				
+				<div class="neigborhood-guides">
+					<div class="container">
+					<h2>Mini story</h2>
+					<p>Hieronder staan een aantal afbeeldingen met dingen die ik leuk vind </p>
+							<div class="row">
+								<div class="col-md-4">
+										 <div class="thumbnail">
+										 <img src="http://sd.keepcalm-o-matic.co.uk/i/keep-calm-and-love-motorcycle.png">
+										 </div>
+										 <div class="thumbnail">
+										 <img src="http://www.sistersin.com/files/u2/spain1.jpg">
+										 </div>
+								</div>
+								<div class="col-md-4">
+										 <div class="thumbnail">
+										 <img src="https://36.media.tumblr.com/508991a51d2d043939ad87fe6956b51c/tumblr_nv6gebKRNB1tr0ja1o1_500.jpg">
+										 </div>
+										 <div class="thumbnail">
+										 <img src="http://www.evomagazine.it/moduli/articoli/attachments/5/9/7/73/la-mustang-gt350-non-arrivera-in-italia_1.jpeg_650.jpg">
+										 </div>
+								</div>
+								<div class="col-md-4">
+										 <a name="contact"></a>
+										 <form name="contact" method="post">
+										 			 Naam:<br>
+													 <input type="text" name="naam">
+													 <br>
+													 Email:<br>
+													 <input type="text" name="email">
+													 <br>
+													 Bericht:<br>
+													 <textarea name="message"></textarea><br>
+													 <input type="submit" value="Verzenden">
+										 </form>
+								</div>
+							</div>
+					</div>
+				</div>
+				
+				<div class="learn-more">
+						 <div class="container">
+						 			<div class="row">
+											 <div class="col-md-4">
+											 			<h3>Waarom heb ik voor informatica gekozen?</h3>
+														<p>Ik was er op de middelbare school goed in dus ik dacht, laat ik er mee verder gaan.</p>
+														
+											 </div>
+											 <div class="col-md-4">
+											 			<h3>Wat wil ik later gaan doen?</h3>
+														<p>Ik hoop dat ik bij een van de krijgsmachten van defensie kom te werken.</p>
+														
+											 </div>
+											 <div class="col-md-4">
+											 			<h3>Meer weten?</h3>
+														<p>Als u meer wilt weten over mij kunt u het contact formulier invullen hierboven en ik neem zo spoedig mogelijk contact met u op</p>
+											 </div>
+									</div>
+						 </div>
+				</div>
+				
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
+			<!-- voor single page scrolle; gebruik ipv <h3>, <h3 id="#link">  -->
+			</body>
+</html>
+
+<?php
+if ($_POST['naam']){
+	 $name = $_POST['naam'];
+	 $email = $_POST['email'];
+	 $message = $_POST['message'];
+	 
+	 
+	 // Mail functie
+	 $to = "avdiesel3@gmail.com";
+	 $subject = "Contact aanvraag";
+	 $headers = "From: " . $email;
+	 
+	 mail($to, $subject, $message, $headers);
+}
